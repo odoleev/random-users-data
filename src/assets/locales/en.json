@@ -1,0 +1,11 @@
+{
+  "mistakes": "Mistakes",
+  "random": "Random",
+  "tableTitles": {
+    "number": "Number",
+    "name": "Name",
+    "address": "Address",
+    "phoneNumber": "Phone number"
+  },
+  "csv": "Download loaded data in CSV"
+}
