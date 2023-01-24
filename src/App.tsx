@@ -1,14 +1,17 @@
 import './App.css';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
+// @ts-ignore
+import {CSVLink} from 'react-csv';
 import {useActions} from "./hooks/useActions";
 import {useTypedSelector} from "./hooks/useTypedSelector";
-import {Table} from "antd";
+import {Button, Col, Row, Table} from "antd";
 import {generateUsers} from "./utils/generateUsers";
 import i18n from "i18next";
 import {useTranslation} from "react-i18next";
 import {ELanguages} from "./Types";
 import {generateRandomNumber} from "./utils/generateRandomNumber";
 import {FunctionalTabs} from "./Components";
+
 
 
 function App() {
@@ -23,6 +26,29 @@ function App() {
   const [page, setPage] = useState<number>(1);
   const [mistakesValue, setMistakesValue] = useState<number>(0);
   const [mistakeRandomSeed, setMistakeRandomSeed] = useState<number>(Math.floor(generateRandomNumber()))
+
+  const csvHeaders = [
+    {
+      label: t('tableTitles.number'),
+      key: 'number',
+    },
+    {
+      label: 'Id',
+      key: 'id',
+    },
+    {
+      label: t('tableTitles.name'),
+      key: 'name',
+    },
+    {
+      label: t('tableTitles.address'),
+      key: 'address',
+    },
+    {
+      label: t('tableTitles.phoneNumber'),
+      key: 'phoneNumber',
+    },
+  ]
 
   const dataSource = users.map((user) => {
     return {
@@ -148,6 +174,17 @@ function App() {
                     users={users}
                     language={language}/>
     <Table columns={columns} dataSource={dataSource} pagination={false}/>
+    <div style={{width: "100%", height: "750px", display: "flex", alignContent: "center", justifyContent: "center"}}>
+      <Row gutter={{ xs: 2, sm: 16, md: 24, lg: 32 }} align="middle">
+        <Col >
+          <span>{t('csv')}</span>
+        </Col>
+        <CSVLink data={users} headers={csvHeaders} filename='static_data.csv'>
+          <Button type="primary">CSV</Button>
+        </CSVLink>
+      </Row>
+    </div>
+
   </div>
 
 }

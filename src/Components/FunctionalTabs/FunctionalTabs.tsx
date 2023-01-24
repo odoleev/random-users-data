@@ -17,29 +17,6 @@ export const FunctionalTabs = ({
 }: IFunctionalTabs) => {
     const { t } = useTranslation();
 
-    const csvHeaders = [
-        {
-            label: t('tableTitles.number'),
-            key: 'number',
-        },
-        {
-            label: 'Id',
-            key: 'id',
-        },
-        {
-            label: t('tableTitles.name'),
-            key: 'name',
-        },
-        {
-            label: t('tableTitles.address'),
-            key: 'address',
-        },
-        {
-            label: t('tableTitles.phoneNumber'),
-            key: 'phoneNumber',
-        },
-    ]
-
     return (
         <Row align="middle" gutter={[{ xs: 8, sm: 16, md: 24, lg: 32 }, {xs: 8, sm: 8 }]} style={{marginBottom: "20px"}}>
             <Col >
@@ -94,17 +71,6 @@ export const FunctionalTabs = ({
                         </Col>
                     ))}
                 </Row>
-            </Col>
-            <Col>
-                <Row gutter={{ xs: 2, sm: 16, md: 24, lg: 32 }} align="middle">
-                    <Col >
-                        <span>{t('csv')}</span>
-                    </Col>
-                    <CSVLink data={users} headers={csvHeaders} filename='static_data.csv'>
-                        <Button type="primary">CSV</Button>
-                    </CSVLink>
-                </Row>
-
             </Col>
         </Row>
     );
