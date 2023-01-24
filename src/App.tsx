@@ -174,7 +174,7 @@ function App() {
                     users={users}
                     language={language}/>
     <Table columns={columns} dataSource={dataSource} pagination={false}/>
-    <div style={{width: "100%", height: "750px", display: "flex", alignContent: "center", justifyContent: "center"}}>
+    <div style={{width: "100%", height: "500px", display: "flex", alignContent: "center", justifyContent: "center"}}>
       <Row gutter={{ xs: 2, sm: 16, md: 24, lg: 32 }} align="middle">
         <Col >
           <span>{t('csv')}</span>
