@@ -12,8 +12,6 @@ import {ELanguages} from "./Types";
 import {generateRandomNumber} from "./utils/generateRandomNumber";
 import {FunctionalTabs} from "./Components";
 
-
-
 function App() {
   const { t } = useTranslation();
   const {setUsers, addUsers, cleanUsers} = useActions();
