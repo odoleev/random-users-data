@@ -11,7 +11,7 @@ Table with randomly generated users data and other features.
 
 ## Features
 
-- Can choose language (en, ru, es). It will lead to UI language change and generating new data (data will match the selected language) .
+- Can choose language (en, ru, es). It will lead to UI language change and new data generation (data will match the selected language) .
 - Infinite scroll.
 - Seeded random and random seed button.
 - Data entry mistake imitation (3 types: random switch of two signs, add new sign, delete sign. Also seeded).
